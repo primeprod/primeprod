@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="menu_enquiry_form_view" model="website.menu">
+        <field name="name">Your Enquiry</field>
+        <field name="url">/enquiry_webform_new</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">80</field>
+    </record>
+
+    <template id="new_enquiry_form" name="Your Enquiry">
+        <t t-call="website.layout">
+            <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24" data-vcss="001"
+                     data-snippet="s_title" data-scroll-background-ratio="1">
+                <div class="container">
+                    <h1>Enquire Us</h1>
+                </div>
+            </section>
+            <section class="s_text_block pt40 pb40 o_colored_level " data-snippet="s_text_block">
+                <div id="wrap">
+                    <div class="oe_structure">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8 mt-4 mt-lg-0">
+                                    <p>
+                                        Contact us about anything related to our company or services.
+                                        <br/>
+                                        We'll do our best to get back to you as soon as possible.
+                                    </p>
+                                    <form role="form" action="/create/enquiryform" method="POST" data-success-page="/contactus-thank-you" data-model_name="crm.lead">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <div class="form-group">
+                                            <label for="product_interested_in" style="width: 200px" class="control-label">Products Interested In</label>
+                                            <div class="col-sm">
+<!--                                               <label id="products_interested_in" style="width: 200px" class="control-label">Products Interested In</label>-->
+<!--                                                 <input type="char" class="control-label" multiple="True" id="Products_label"></input>-->
+                                                <select name="product_interested_in"
+                                                        t-attf-class="form-control s_website_form_input">
+                                                    <option value="ERP">ERP</option>
+                                                    <option value="HRMS">HRMS</option>
+                                                    <option value="CMS">CMS</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm">
+                                                <label for="partner_name" style="width: 500px" class="control-label">Your Company</label>
+                                                <input type="text" name="partner_name" t-att-value="partner_name"
+                                                       id="requirement5"
+                                                       class="form-control" required="required"
+                                                       data-fill-with="commercial_company_name"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm">
+                                                <label for="name" style="width: 200px" class="control-label">Your Name
+                                                </label>
+                                                <input data-type="char" name="name" t-att-value="name" data-name="Field"
+                                                       id="requirement1"
+                                                       class="form-control" required="required" data-fill-with="name"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm">
+                                                <label for="street" style="width: 500px" class="control-label">Address</label>
+                                                <input type="text" name="street" t-att-value="street" id="requirement4"
+                                                       class="form-control" required="required"
+                                                       data-fill-with="address"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm">
+                                                <label for="email" style="width: 500px" class="control-label">Email
+                                                </label>
+                                                <input type="email" name="email_from" t-att-value="email_from"
+                                                       id="requirement3"
+                                                       class="form-control" required="required" data-fill-with="email"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm">
+                                                <label for="phone" style="width: 500px" class="control-label">Contact No.
+                                                </label>
+                                                <input type="char" name="phone" t-att-value="phone" id="requirement2"
+                                                       class="form-control" required="required" data-fill-with="phone"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm">
+                                                <label class="control-label" id="no_of_employee">No. of Employees
+                                                </label>
+                                                <input type="text" name="no_of_employee" t-att-value="no_of_employee" id="requirement8" class="form-control"
+                                                       required="required">
+                                                </input>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm">
+                                                <label class="control-label" for="no_of_user">Approx. no. of Logins Needed(No.of Users)
+                                                </label>
+                                                <input type="text" name="no_of_users" t-att-value="no_of_users" id="requirement9" class="form-control"
+                                                       required="required">
+                                                </input>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm">
+                                                <label class="control-label" data-type="text" data-name="Field" id="brief_label">Brief Description Of Your Requirements
+                                                </label>
+                                                <textarea id="requirement10" class="form-control s_website_form_input" name="description"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label col-auto s_website_form_label"
+                                                   style="width: 200px"
+                                                   for="callback">
+                                                <span class="control-label">Request for a Call Back
+                                                </span>
+                                            </label>
+                                            <div class="col-sm">
+                                                <select name="callback"
+                                                        t-attf-class="form-control s_website_form_input">
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+<!--                                        <div class="form-group">-->
+<!--                                            <div class="col-sm">-->
+<!--                                                <label class="control-label" id="attachments_label">Attach Documents</label>-->
+<!--                                                <input type="file" name="attachment" class="file"-->
+<!--                                                       multiple="true" data-show-upload="true"-->
+<!--                                                       data-show-caption="true" lass="file"-->
+<!--                                                       data-show-preview="true" id="project_id"/>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+                                        <div class="clearfix oe_login_buttons">
+                                            <button type="submit" class="btn btn-primary pull-left">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-4 mt-4 mt-lg-0">
+                                    <p>
+                                        <img class="img-fluid o_we_custom_image mx-auto d-block"
+                                             src="/website_new/static/src/pmcs.png"
+                                             data-original-title="" aria-describedby="tooltip625071"
+                                             data-original-id="586"
+                                             data-mimetype="image/jpeg" loading="lazy" data-quality="100"
+                                             style="width: 25% !important;"/>
+                                    </p>
+                                    <p>
+                                        <ul class="list-unstyled mb-0 pl-2">
+                                            <li>My Company</li>
+                                            <li>
+                                                <i class="fa fa-map-marker fa-fw mr-2"/>
+                                                <span class="o_force_ltr">Prime Minds Consulting Private Limited,</span>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-phone fa-fw mr-2"/>
+                                                <span class="o_force_ltr">+91 9945379059,</span>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-1x fa-fw fa-envelope mr-2"/>
+                                                <span>hello@primemindz.com
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </t>
+    </template>
+
+
+    <record id="enquiry_thanks" model="website.page">
+        <field name="name">Thanks</field>
+        <field name="type">qweb</field>
+        <field name="url">/patient-thank-you</field>
+        <field name="website_published">True</field>
+        <field name="key">website_new.enquiry_thanks</field>
+        <field name="arch" type="xml">
+            <t name="Thanks" t-name="website_new.enquiry_thanks">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="container">
+                            <h1>Thanks!</h1>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="alert alert-success" role="status">
+                                        Your message has been sent successfully!
+                                    </div>
+                                    <p>
+                                        We will get back to you shortly.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>
+
+
