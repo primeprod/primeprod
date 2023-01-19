@@ -19,6 +19,9 @@
             </field>
         </record>
 
+
+        
+
 <!--        <record id="crm_new_form" model="ir.ui.view">-->
 <!--            <field name="model">crm.new</field>-->
 <!--            <field name="arch" type="xml">-->
