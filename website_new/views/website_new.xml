@@ -12,7 +12,7 @@
             <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24" data-vcss="001"
                      data-snippet="s_title" data-scroll-background-ratio="1">
                 <div class="container">
-                    <h1>Enquire Us</h1>
+                    <h1>Your Enquiry</h1>
                 </div>
             </section>
             <section class="s_text_block pt40 pb40 o_colored_level " data-snippet="s_text_block">
@@ -46,7 +46,7 @@
                                                 <label for="partner_name" style="width: 500px" class="control-label">Your Company</label>
                                                 <input type="text" name="partner_name" t-att-value="partner_name"
                                                        id="requirement5"
-                                                       class="form-control" required="required"
+                                                       class="form-control"
                                                        data-fill-with="commercial_company_name"/>
                                             </div>
                                         </div>
@@ -63,7 +63,7 @@
                                             <div class="col-sm">
                                                 <label for="street" style="width: 500px" class="control-label">Address</label>
                                                 <input type="text" name="street" t-att-value="street" id="requirement4"
-                                                       class="form-control" required="required"
+                                                       class="form-control"
                                                        data-fill-with="address"/>
                                             </div>
                                         </div>
@@ -88,8 +88,7 @@
                                             <div class="col-sm">
                                                 <label class="control-label" id="no_of_employee">No. of Employees
                                                 </label>
-                                                <input type="text" name="no_of_employee" t-att-value="no_of_employee" id="requirement8" class="form-control"
-                                                       required="required">
+                                                <input type="text" name="no_of_employee" t-att-value="no_of_employee" id="requirement8" class="form-control">
                                                 </input>
                                             </div>
                                         </div>
@@ -97,8 +96,7 @@
                                             <div class="col-sm">
                                                 <label class="control-label" for="no_of_user">Approx. no. of Logins Needed(No.of Users)
                                                 </label>
-                                                <input type="text" name="no_of_users" t-att-value="no_of_users" id="requirement9" class="form-control"
-                                                       required="required">
+                                                <input type="text" name="no_of_users" t-att-value="no_of_users" id="requirement9" class="form-control">
                                                 </input>
                                             </div>
                                         </div>

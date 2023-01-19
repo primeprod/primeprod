@@ -21,7 +21,6 @@ class Enquiry(http.Controller):
 
     @http.route('/create/enquiryform', type="http", auth="public", website="True")
     def create_enquiryform(self, **kw):
-        print(kw,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
 
 
@@ -32,8 +31,10 @@ class Enquiry(http.Controller):
         # b = kw[''].encode('utf-8')
         # print(base64.b64encode(b).decode(),d,c,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
-        crm_obj = request.env['crm.lead'].sudo().create(kw)
-        print(crm_obj,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        kw['type'] = 'lead'
+        # print(kw,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        request.env['crm.lead'].sudo().create(kw)
+        # print(crm_obj,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
         return request.render("website_new.enquiry_thanks", {})
 
 
