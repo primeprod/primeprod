@@ -9,7 +9,8 @@
                 <xpath expr="//field[@name='function']" position="after">
                             <field name="no_of_employee"/>
                             <field name="no_of_users"/>
-                            <field name="product_interested_in"/>
+                            <field name="product_interested_in" invisble="1"/>
+                            <field name="product_interested_in_mm" widget="many2many_tags"/>
                 </xpath>
                 <xpath expr="//field[@name='team_id']" position="after">
                     <field name="brief_label"/>
@@ -22,38 +23,38 @@
 
 
 
-<!--        <record id="crm_new_form" model="ir.ui.view">-->
-<!--            <field name="model">crm.new</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <form string="Fields">-->
-<!--                    <sheet>-->
-<!--                        <group>-->
-<!--                            <field name="name"/>-->
-<!--                        </group>-->
-<!--                    </sheet>-->
-<!--                </form>-->
-<!--            </field>-->
-<!--        </record>-->
+        <record id="crm_new_form" model="ir.ui.view">
+            <field name="model">crm.new</field>
+            <field name="arch" type="xml">
+                <form string="Fields">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
 
 
-<!--        <record id="crm_new_action" model="ir.actions.act_window">-->
-<!--            <field name="name">Custom crm new</field>-->
-<!--            <field name="type">ir.actions.act_window</field>-->
-<!--            <field name="res_model">crm.new</field>-->
-<!--            <field name="view_mode">list,form</field>-->
-<!--            <field name="help" type="html">-->
-<!--              <p class="o_view_nocontent_smiling_face">-->
-<!--                Create-->
-<!--              </p>-->
-<!--            </field>-->
-<!--        </record>-->
+        <record id="crm_new_action" model="ir.actions.act_window">
+            <field name="name">Custom crm new</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crm.new</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create
+              </p>
+            </field>
+        </record>
 
-<!--        <menuitem-->
-<!--                id="crm_menu_new"-->
-<!--                name="crm new"-->
-<!--                parent="crm.crm_menu_root"-->
-<!--                action="website_new.crm_new_action"-->
-<!--                sequence="5"/>-->
+        <menuitem
+                id="crm_menu_new"
+                name="crm new"
+                parent="crm.crm_menu_root"
+                action="website_new.crm_new_action"
+                sequence="5"/>
     </data>
 </odoo>

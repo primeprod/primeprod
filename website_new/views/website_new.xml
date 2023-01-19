@@ -26,6 +26,18 @@
                                         <br/>
                                         We'll do our best to get back to you as soon as possible.
                                     </p>
+                                    <header>
+<!--                            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"/>-->
+<!--                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />-->
+<!--                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>-->
+<!--                            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"/>-->
+<!--                            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"/>-->
+                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
+                                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+                                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css"/>
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"/>
+                                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"/>
+                                   </header>
                                     <form role="form" action="/create/enquiryform" method="POST" data-success-page="/contactus-thank-you" data-model_name="crm.lead">
                                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                         <div class="form-group">
@@ -33,14 +45,41 @@
                                             <div class="col-sm">
 <!--                                               <label id="products_interested_in" style="width: 200px" class="control-label">Products Interested In</label>-->
 <!--                                                 <input type="char" class="control-label" multiple="True" id="Products_label"></input>-->
-                                                <select name="product_interested_in"
-                                                        t-attf-class="form-control s_website_form_input">
-                                                    <option value="ERP">ERP</option>
-                                                    <option value="HRMS">HRMS</option>
-                                                    <option value="CMS">CMS</option>
+<!--                                                <select name="product_interested_in"-->
+<!--                                                        t-attf-class="form-control s_website_form_input">-->
+<!--                                                    <option value="ERP">ERP</option>-->
+<!--                                                    <option value="HRMS">HRMS</option>-->
+<!--                                                    <option value="CMS">CMS</option>-->
+<!--                                                </select>-->
+                                                <select multiple="1" name="product_interested_in" required="1"
+                                                            class="selectpicker form-control s_website_form_input" data-live-search="true">
+                                                        <t t-foreach="product_interested_in or []" t-as="product">
+                                                            <option t-att-value="product.id">
+                                                                <t t-esc="product.name" />
+                                                            </option>
+                                                        </t>
                                                 </select>
                                             </div>
                                         </div>
+<!--                                        <div class="form-group col-12 s_website_form_field s_website_form_required" data-type="char" data-name="Field">-->
+<!--&lt;!&ndash;                                               <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>&ndash;&gt;-->
+<!--                                            <div class="row s_col_no_resize s_col_no_bgcolor">-->
+<!--                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="studio1">-->
+<!--                                                    <span class="s_website_form_label_content">Specialized Legislation Area</span>-->
+<!--                                                    <span class="s_website_form_mark"> *</span>-->
+<!--                                                </label>-->
+<!--                                                <div class="col-sm">-->
+<!--                                                    <select multiple="1" name="legislation_area_id" required="1"-->
+<!--                                                            class="selectpicker form-control s_website_form_input" data-live-search="true">-->
+<!--                                                        <t t-foreach="product_interested_in or []" t-as="product">-->
+<!--                                                            <option t-att-value="product.id">-->
+<!--                                                                <t t-esc="product.name" />-->
+<!--                                                            </option>-->
+<!--                                                        </t>-->
+<!--                                                    </select>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
                                         <div class="form-group">
                                             <div class="col-sm">
                                                 <label for="partner_name" style="width: 500px" class="control-label">Your Company</label>

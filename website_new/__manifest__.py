@@ -8,7 +8,7 @@
     'depends': ['base','website','crm',],
     'category': 'website',
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/website_new.xml',
         'views/website_label_crm.xml',
     ],
