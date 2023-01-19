@@ -32,8 +32,8 @@ class Enquiry(http.Controller):
         # b = kw[''].encode('utf-8')
         # print(base64.b64encode(b).decode(),d,c,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
-        request.env['crm.lead'].sudo().create(kw)
-        # print(kw,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        crm_obj = request.env['crm.lead'].sudo().create(kw)
+        print(crm_obj,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
         return request.render("website_new.enquiry_thanks", {})
 
 
