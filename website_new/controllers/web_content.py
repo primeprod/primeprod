@@ -52,6 +52,8 @@ class Enquiry(http.Controller):
             'product_interested_in_mm' : product_interested_in
         }
         crm_obj = request.env['crm.lead'].sudo().create(crm_val)
+        # print(crm_obj.user_id)
+        crm_obj.user_id.company_id = 1
         return request.render("website_new.enquiry_thanks", {})
 
         # print(crm_val,crm_obj,'crm_obj!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
