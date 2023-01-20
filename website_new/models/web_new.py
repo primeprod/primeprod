@@ -28,3 +28,8 @@ class NewLabel(models.Model):
 # new module created for enquiry form
 # new module created for enquiry form
 # new module created for enquiry form
+
+class ResCompanyNew(models.Model):
+    _inherit = 'res.company'
+
+    default_company = fields.Boolean(string="Default Company")
