@@ -34,7 +34,7 @@ class Enquiry(http.Controller):
         # kw['type'] = 'lead'
         product_interested_in = request.httprequest.form.getlist('product_interested_in')
         # print(product_interested_in,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-        # company_obj = request.env['res.company'].search([('default_company','=',True)],limit=1)
+        company_obj = request.env['res.company'].search([('default_company','=',True)],limit=1)
         # company_obj = request.env['res.company'].search([('id','=',1)])
         crm_val = {
             'partner_name': kw['partner_name'],
@@ -47,8 +47,7 @@ class Enquiry(http.Controller):
             'description': kw['description'],
             'callback': kw['callback'],
             'type':'lead',
-            # 'company_id':company_obj.id,
-            'company_id':1,
+            'company_id':company_obj.id,
             'product_interested_in_mm' : product_interested_in
         }
         crm_obj = request.env['crm.lead'].sudo().create(crm_val)
