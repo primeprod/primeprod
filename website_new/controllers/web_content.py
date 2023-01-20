@@ -49,7 +49,7 @@ class Enquiry(http.Controller):
             'product_interested_in_mm' : product_interested_in
         }
         crm_obj = request.env['crm.lead'].sudo().create(crm_val)
-        print(crm_val,crm_obj,'crm_obj!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        # print(crm_val,crm_obj,'crm_obj!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
         return request.render("website_new.enquiry_thanks", {})
 
         # print(crm_val,crm_obj,'crm_obj!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
