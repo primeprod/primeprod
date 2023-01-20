@@ -52,4 +52,8 @@ class Enquiry(http.Controller):
         print(crm_val,crm_obj,'crm_obj!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
         return request.render("website_new.enquiry_thanks", {})
 
+        # print(crm_val,crm_obj,'crm_obj!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        # print(crm_val,crm_obj,'crm_obj!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        # print(crm_val,crm_obj,'crm_obj!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+
 
