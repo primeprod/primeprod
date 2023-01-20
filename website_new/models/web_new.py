@@ -22,3 +22,17 @@ class NewLabel(models.Model):
     name = fields.Char(string="Name")
     # hrms = fields.Many2many(string="HRMS")
     # cms = fields.Many2many(string="CMS")
+
+
+# new module created for enquiry form
+# new module created for enquiry form
+# new module created for enquiry form
+# new module created for enquiry form
+
+class ResCompanyNew(models.Model):
+    _inherit = 'res.company'
+
+    default_company = fields.Boolean(string="Default Company")
+
+
+
