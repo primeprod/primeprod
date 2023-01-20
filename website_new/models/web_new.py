@@ -33,3 +33,4 @@ class ResCompanyNew(models.Model):
     _inherit = 'res.company'
 
     default_company = fields.Boolean(string="Default Company")
+
