@@ -14,11 +14,11 @@ class InheritCrm(models.Model):
     callback = fields.Char(string="Request for a call back")
     # attachment = fields.Many2one(string="Attach Documents")
     product_interested_in = fields.Char(string="Products interested in")
-    # product_interested_in = fields.Many2many('crm.new',string="Products interested in")
+    product_interested_in_mm = fields.Many2many('crm.new',string="Products interested in")
 
-# class NewLabel(models.Model):
-#     _name = "crm.new"
-#
-#     name = fields.Char(string="Name")
+class NewLabel(models.Model):
+    _name = "crm.new"
+
+    name = fields.Char(string="Name")
     # hrms = fields.Many2many(string="HRMS")
     # cms = fields.Many2many(string="CMS")
