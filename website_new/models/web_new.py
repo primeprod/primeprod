@@ -34,3 +34,5 @@ class ResCompanyNew(models.Model):
 
     default_company = fields.Boolean(string="Default Company")
 
+
+
