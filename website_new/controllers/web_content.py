@@ -49,7 +49,6 @@ class Enquiry(http.Controller):
             'type':'lead',
             # 'company_id':company_obj.id,
             'company_id':1,
-            'user_id': '',
             'product_interested_in_mm' : product_interested_in
         }
         crm_obj = request.env['crm.lead'].sudo().create(crm_val)
